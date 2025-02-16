@@ -5,6 +5,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ name: '', email: '' }); // State for the new user
   const [loading, setLoading] = useState(true);
+  const port = process.env.PORT || 4002;
 
   useEffect(() => {
     fetchUsers();
@@ -12,7 +13,6 @@ function App() {
 
   // Function to fetch all users from the backend
   const fetchUsers = async () => {
-    const port = process.env.PORT || 3500;
     try {
       const response = await axios.get(`http://localhost:${port}/api/users`);
       setUsers(response.data);
