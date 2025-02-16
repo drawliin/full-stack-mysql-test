@@ -12,8 +12,9 @@ function App() {
 
   // Function to fetch all users from the backend
   const fetchUsers = async () => {
+    const port = process.env.PORT || 3500;
     try {
-      const response = await axios.get('http://localhost:5000/api/users');
+      const response = await axios.get(`http://localhost:${port}/api/users`);
       setUsers(response.data);
       setLoading(false);
     } catch (error) {
