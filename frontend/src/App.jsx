@@ -34,7 +34,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users', newUser);
+      const response = await axios.post(`http://localhost:${port}/api/users`, newUser);
       setUsers((prevUsers) => [...prevUsers, response.data]); // Add new user to the list
       setNewUser({ name: '', email: '' }); // Reset the form
     } catch (error) {

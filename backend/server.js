@@ -6,12 +6,12 @@ const userRoutes = require('./routes/userRoutes');
 app.use(cors());
 app.use(express.json());
 
-const port = process.env.PORT || 3500;
+const port = process.env.PORT || 4002;
 
 // Use the routes
 app.use('/api', userRoutes);
 
 // Start the server
 app.listen(port, () => {
-  console.log('Server running on port 5000');
+  console.log('Server running on port 4002');
 });
