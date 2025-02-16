@@ -12,6 +12,6 @@ const port = process.env.PORT || 5000;
 app.use('/api', userRoutes);
 
 // Start the server
-app.listen(port, () => {
+app.listen(5000, () => {
   console.log('Server running on port 5000');
 });
