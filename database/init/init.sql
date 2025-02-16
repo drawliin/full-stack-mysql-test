@@ -1,8 +1,3 @@
--- backend/init/init.sql
-
-CREATE DATABASE IF NOT EXISTS test;
-
-USE test;
 
 -- Create tables (example for User table)
 CREATE TABLE IF NOT EXISTS Users (
