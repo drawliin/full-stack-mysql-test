@@ -5,7 +5,8 @@ function App() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ name: '', email: '' }); // State for the new user
   const [loading, setLoading] = useState(true);
-  const API_URL = process.env.REACT_APP_API_URL || 4002;
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4002/api';
+  console.log(API_URL)
 
   useEffect(() => {
     fetchUsers();
