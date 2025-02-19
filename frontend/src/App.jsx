@@ -5,7 +5,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ name: '', email: '' }); // State for the new user
   const [loading, setLoading] = useState(true);
-  const port = process.env.PORT || 4002;
+  const API_URL = process.env.API_URL || 4002;
 
   useEffect(() => {
     fetchUsers();
@@ -14,7 +14,7 @@ function App() {
   // Function to fetch all users from the backend
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(`http://localhost:${port}/api/users`);
+      const response = await axios.get(`${API_URL}/users`);
       setUsers(response.data);
       setLoading(false);
     } catch (error) {
@@ -34,7 +34,7 @@ function App() {
     }
 
     try {
-      const response = await axios.post(`http://localhost:${port}/api/users`, newUser);
+      const response = await axios.post(`${API_URL}/users`, newUser);
       setUsers((prevUsers) => [...prevUsers, response.data]); // Add new user to the list
       setNewUser({ name: '', email: '' }); // Reset the form
     } catch (error) {
