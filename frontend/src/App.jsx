@@ -6,7 +6,7 @@ function App() {
   const [newUser, setNewUser] = useState({ name: '', email: '' }); // State for the new user
   const [loading, setLoading] = useState(true);
   const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4002/api';
-  console.log(API_URL)
+  console.log('url: ', API_URL)
 
   useEffect(() => {
     fetchUsers();
